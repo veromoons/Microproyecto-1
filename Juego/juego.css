@@ -1,0 +1,83 @@
+body{
+    background-color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    text-shadow: 2px 2px 5px white;
+}
+
+.contenedorJuego{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloPuntaje{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.puntuacion{
+    color:white;
+    margin:0;
+    margin-top: 20px;
+}
+
+.puntajeAcum{
+    color:white;
+    margin:0;
+    margin-bottom: 50px;
+}
+
+.botonesIzq, .botonesDer{
+    display:flex;
+    flex-direction: column;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.1s ease-in-out;
+    margin: 5px;
+    width:180px;
+    height:180px;
+}
+
+.boton1{
+    border-top-left-radius: 150px;
+    background-color: blue;
+    border:none;
+}
+.boton1:active {
+    box-shadow: 0 0 40px rgb(60, 0, 255), 0 0 80px rgba(0, 38, 255, 0.7);
+}
+
+.boton2{
+    border-top-right-radius: 150px;
+    background-color: red;
+    border:none;
+}
+.boton2:active {
+    box-shadow: 0 0 40px rgba(255, 0, 0, 1), 0 0 80px rgba(255, 0, 0, 0.7);
+}
+
+.boton3{
+    border-bottom-left-radius: 150px;
+    background-color: yellow;
+    border:none;
+}
+.boton3:active {
+    box-shadow: 0 0 40px rgb(255, 234, 0), 0 0 80px rgba(238, 255, 0, 0.7);
+}
+
+.boton4{
+    border-bottom-right-radius: 150px;
+    background-color: green;
+    border:none;
+}
+.boton4:active {
+    box-shadow: 0 0 40px rgb(15, 110, 15), 0 0 80px rgb(15, 110, 15);
+}
+
