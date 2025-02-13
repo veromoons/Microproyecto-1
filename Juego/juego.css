@@ -31,7 +31,7 @@ body{
     margin-bottom: 50px;
 }
 
-.botonesIzq, .botonesDer{
+.buttonsLeft, .buttonsRight{
     display:flex;
     flex-direction: column;
 }
@@ -45,39 +45,39 @@ button {
     height:180px;
 }
 
-.boton1{
+.button-top-left{
     border-top-left-radius: 150px;
     background-color: blue;
     border:none;
 }
-.boton1:active {
+.button-top-left:active {
     box-shadow: 0 0 40px rgb(60, 0, 255), 0 0 80px rgba(0, 38, 255, 0.7);
 }
 
-.boton2{
+.button-top-right{
     border-top-right-radius: 150px;
     background-color: red;
     border:none;
 }
-.boton2:active {
+.button-top-right:active {
     box-shadow: 0 0 40px rgba(255, 0, 0, 1), 0 0 80px rgba(255, 0, 0, 0.7);
 }
 
-.boton3{
+.button-bottom-left{
     border-bottom-left-radius: 150px;
     background-color: yellow;
     border:none;
 }
-.boton3:active {
+.button-bottom-left:active {
     box-shadow: 0 0 40px rgb(255, 234, 0), 0 0 80px rgba(238, 255, 0, 0.7);
 }
 
-.boton4{
+.button-bottom-right{
     border-bottom-right-radius: 150px;
     background-color: green;
     border:none;
 }
-.boton4:active {
+.button-bottom-right:active {
     box-shadow: 0 0 40px rgb(15, 110, 15), 0 0 80px rgb(15, 110, 15);
 }
 

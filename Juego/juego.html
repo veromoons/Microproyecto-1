@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon Says</title>
     <link rel="stylesheet" href="juego.css">
+
+    <audio id="sound1">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
+    </audio>
+    <audio id="sound2">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></source>
+    </audio>
+    <audio id="sound3">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></source>
+    </audio>
+    <audio id="sound4">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
+    </audio>
+
 </head>
 <body>
     <div class="tituloPuntaje">
@@ -12,13 +26,13 @@
         <p class="puntajeAcum">X</p>
     </div>
     <div class="contenedorJuego">
-        <div class="botonesIzq">
-            <button class="boton1">
-            <button class="boton3">
+        <div class="buttonsLeft">
+            <button class="button-top-left">
+            <button class="button-bottom-left">
         </div>
-        <div class="botonesDer">
-            <button class="boton2">
-            <button class="boton4">
+        <div class="buttonsRight">
+            <button class="button-top-right">
+            <button class="button-bottom-right">
         </div>
     </div>
 </body>
