@@ -24,10 +24,10 @@ startButton.addEventListener('click', (event) => {
 function play() {
   flash = 0;
   // interval = 0;
-  scoreDisplay.innerHTML = 0;
   turn=1;
+  scoreDisplay.innerHTML = 0;
   // document.querySelector("#puntaje-acum").innerHTML = 1;
-  good = true;
+  good = true
   secuenceOrder = [];
   playerOrder = [];
   for (let i = 0; i < 100; i++) {
@@ -53,10 +53,10 @@ function gameTurn() {
     clearColor();
     setTimeout(() => {
       let color = secuenceOrder[flash];
-      if (order[flash] == 1) top_left_effects();
-      if (order[flash] == 2) bottom_left_effects();
-      if (order[flash] == 3) top_right_effects();
-      if (order[flash] == 4) bottom_right_effects();
+      if (color == 1) top_left_effects();
+      if (color == 2) bottom_left_effects();
+      if (color == 3) top_right_effects();
+      if (color == 4) bottom_right_effects();
       flash++;
     }, 200);
   }
@@ -67,7 +67,7 @@ function top_left_effects() {
     let audio = document.querySelector("#sound1");
     audio.play();
   }
-  noise = true;
+  noise = true
   topLeft.style.backgroundColor = "lightblue";
 }
 function bottom_left_effects() {
@@ -84,7 +84,7 @@ function top_right_effects() {
     audio.play();
   }
   noise = true;
-  topRight.style.backgroundColor = "lightred";
+  topRight.style.backgroundColor = "lightorange";
 }
 function bottom_right_effects() {
   if (noise) {
@@ -96,17 +96,17 @@ function bottom_right_effects() {
 }
 
 function clearColor() {
-  topLeft.style.backgroundColor = "darkgreen";
-  topRight.style.backgroundColor = "darkred";
-  bottomLeft.style.backgroundColor = "goldenrod";
-  bottomRight.style.backgroundColor = "darkblue";
+  topLeft.style.backgroundColor = "blue";
+  topRight.style.backgroundColor = "orange";
+  bottomLeft.style.backgroundColor = "yellow";
+  bottomRight.style.backgroundColor = "green";
 }
 
 function flashColor() {
-  topLeft.style.backgroundColor = "lightgreen";
-  topRight.style.backgroundColor = "tomato";
-  bottomLeft.style.backgroundColor = "yellow";
-  bottomRight.style.backgroundColor = "lightskyblue";
+  topLeft.style.backgroundColor = "lightblue";
+  topRight.style.backgroundColor = "lightorange";
+  bottomLeft.style.backgroundColor = "lightyellow";
+  bottomRight.style.backgroundColor = "lightgreen";
 }
 
 topLeft.addEventListener('click', () => playerAction(1, top_left_effects));
@@ -164,6 +164,9 @@ function check() {
     flashColor();
     setTimeout(() => {
       clearColor();
+      successCount = 0; // Reset success count
+      turn = 1; // Reset turn
+      scoreDisplay.innerHTML = turn; // Update score display
       play();
     }, 1000);
     noise = false;
@@ -173,7 +176,7 @@ function check() {
   if (turn == playerOrder.length && good) {
     turn++;
     playerOrder = [];
-    scoreDisplay.innerHTML = turn;
+    scoreDisplay.innerHTML = turn-1;
     compTurn = true;
     flash = 0;
     interval = setInterval(gameTurn, 800);
