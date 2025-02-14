@@ -24,7 +24,7 @@ startButton.addEventListener('click', (event) => {
 function play() {
   flash = 0;
   // interval = 0;
-  scoreDisplay.innerHTML = 1;
+  scoreDisplay.innerHTML = 0;
   turn=1;
   // document.querySelector("#puntaje-acum").innerHTML = 1;
   good = true;
@@ -160,7 +160,7 @@ bottomRight.addEventListener('click', () => playerAction(4, bottom_right_effects
 //   })
 
 function check() {
-  if (playerOrder[playerOrder.length - 1] !== secuenceOrder[playerOrder.length - 1]){
+  if (playerOrder[playerOrder.length - 1] !== secuenceOrder[playerOrder.length - 1]){ 
     flashColor();
     setTimeout(() => {
       clearColor();
