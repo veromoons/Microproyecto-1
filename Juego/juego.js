@@ -65,7 +65,7 @@ function gameTurn() {
 
 function top_left_effects() {
   if (noise) {
-    let audio = document.querySelector("#sound1");
+    const audio = document.querySelector("#sound1");
     audio.play();
   }
   noise = true
@@ -73,7 +73,7 @@ function top_left_effects() {
 }
 function bottom_left_effects() {
   if (noise) {
-    let audio = document.querySelector("#sound2");
+    const audio = document.querySelector("#sound2");
     audio.play();
   }
   noise = true;
@@ -81,7 +81,7 @@ function bottom_left_effects() {
 }
 function top_right_effects() {
   if (noise) {
-    let audio = document.querySelector("#sound3");
+    const audio = document.querySelector("#sound3");
     audio.play();
   }
   noise = true;
@@ -89,7 +89,7 @@ function top_right_effects() {
 }
 function bottom_right_effects() {
   if (noise) {
-    let audio = document.querySelector("#sound4");
+    const audio = document.querySelector("#sound4");
     audio.play();
   }
   noise = true;
@@ -173,6 +173,8 @@ function playerAction(color, effectFunction) {
 function activateModal(finalPuntajes){
   var modal = document.getElementById("modalpopup");
     modal.style.display = "block";
+
+    finalPuntajes.sort((a, b) => b.score - a.score);
 
     let tableHTML = `
         <table>

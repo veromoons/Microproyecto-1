@@ -1,6 +1,6 @@
 body{
     background-color: black;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Cabin Sketch', 'Helvetica' ,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
     
 }
 
@@ -24,20 +24,27 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 10px;
+    font-size: 20px;
 }
 
 .puntuacion{
     color:white;
     margin:0;
     margin-top: 20px;
-    font-size: 25px;
-    text-shadow: 2px 2px 5px white;
+    font-size: 30px;
+    text-shadow: 1px 1px 3px white;
+    font-family: 'Helvetica';
+    font-weight: bold;
 }
 
 .puntajeAcum{
     color:white;
     margin:0;
     margin-bottom: 50px;
+    font-size: 30px;
+    text-shadow: 1px 1px 3px white;
+    font-family: 'Helvetica';
+    font-weight: bold;
 }
 
 .buttonsLeft, .buttonsRight{
@@ -115,7 +122,8 @@ body{
     height: 60px;
     border-radius: 10px;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 30px;
+    font-family: 'Helvetica';
 }
 
 /* modal popup */

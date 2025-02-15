@@ -28,7 +28,9 @@ document.querySelector('#play-button').addEventListener('click', startGame);
 function activateModal(finalPuntajes){
     var modal = document.getElementById("modalpopup");
       modal.style.display = "block";
-  
+
+      finalPuntajes.sort((a, b) => b.score - a.score);
+      
       let tableHTML = `
           <table>
               <tr>
