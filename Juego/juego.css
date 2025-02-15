@@ -1,8 +1,15 @@
 body{
     background-color: black;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 25px;
-    text-shadow: 2px 2px 5px white;
+    
+}
+
+.contenedorpapa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:40px;
 }
 
 .contenedorJuego{
@@ -23,6 +30,8 @@ body{
     color:white;
     margin:0;
     margin-top: 20px;
+    font-size: 25px;
+    text-shadow: 2px 2px 5px white;
 }
 
 .puntajeAcum{
@@ -36,16 +45,14 @@ body{
     flex-direction: column;
 }
 
-button {
+
+.button-top-left{
     border: none;
     cursor: pointer;
     transition: box-shadow 0.1s ease-in-out;
     margin: 5px;
     width:180px;
     height:180px;
-}
-
-.button-top-left{
     border-top-left-radius: 150px;
     background-color: blue;
     border:none;
@@ -55,15 +62,27 @@ button {
 }
 
 .button-top-right{
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.1s ease-in-out;
+    margin: 5px;
+    width:180px;
+    height:180px;
     border-top-right-radius: 150px;
-    background-color: orange;
+    background-color: red;
     border:none;
 }
 .button-top-right:active {
-    box-shadow: 0 0 40px rgb(255, 165, 0), 0 0 80px rgba(255, 165, 0);
+    box-shadow: 0 0 40px rgb(158, 3, 3), 0 0 80px rgb(158, 3, 3);
 }
 
 .button-bottom-left{
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.1s ease-in-out;
+    margin: 5px;
+    width:180px;
+    height:180px;
     border-bottom-left-radius: 150px;
     background-color: yellow;
     border:none;
@@ -73,6 +92,12 @@ button {
 }
 
 .button-bottom-right{
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.1s ease-in-out;
+    margin: 5px;
+    width:180px;
+    height:180px;
     border-bottom-right-radius: 150px;
     background-color: green;
     border:none;
@@ -81,3 +106,89 @@ button {
     box-shadow: 0 0 40px rgb(15, 110, 15), 0 0 80px rgb(15, 110, 15);
 }
 
+#start{
+    color:white;
+    background-color: black;
+    border-width: 10px;
+    border-color: white;
+    width: 250px;
+    height: 60px;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+/* modal popup */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .modalcont {
+    border-radius: 15px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.324);
+    
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .back {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+
+    color:white;
+    background-color: black;
+    border-width: 10px;
+    border-color: white;
+    width: auto;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 40px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* transparencia en tabla (en header y  divisiones de la tabla*/
+th, td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+td {
+    background-color: rgba(255, 255, 255, 0.1); 
+}

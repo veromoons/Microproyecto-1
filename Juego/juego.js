@@ -30,6 +30,7 @@ function play() {
   good = true
   secuenceOrder = [];
   playerOrder = [];
+  // startButton.innerHTML = "START";
   for (let i = 0; i < 100; i++) {
     let random_color = Math.floor(Math.random() * 4) + 1
     secuenceOrder.push(random_color);
@@ -84,7 +85,7 @@ function top_right_effects() {
     audio.play();
   }
   noise = true;
-  topRight.style.backgroundColor = "lightorange";
+  topRight.style.backgroundColor = "lightcoral";
 }
 function bottom_right_effects() {
   if (noise) {
@@ -97,14 +98,14 @@ function bottom_right_effects() {
 
 function clearColor() {
   topLeft.style.backgroundColor = "blue";
-  topRight.style.backgroundColor = "orange";
+  topRight.style.backgroundColor = "red";
   bottomLeft.style.backgroundColor = "yellow";
   bottomRight.style.backgroundColor = "green";
 }
 
 function flashColor() {
   topLeft.style.backgroundColor = "lightblue";
-  topRight.style.backgroundColor = "lightorange";
+  topRight.style.backgroundColor = "lightcoral";
   bottomLeft.style.backgroundColor = "lightyellow";
   bottomRight.style.backgroundColor = "lightgreen";
 }
@@ -114,50 +115,6 @@ topRight.addEventListener('click', () => playerAction(3, top_right_effects));
 bottomLeft.addEventListener('click', () => playerAction(2, bottom_left_effects));
 bottomRight.addEventListener('click', () => playerAction(4, bottom_right_effects));
 
-
-// topLeft.addEventListener('click', (event) => {
-//   if (on) {
-//     playerOrder.push(1);
-//     check();
-//     top_left_effects();
-//     setTimeout(() => {
-//         clearColor();
-//       }, 300);
-//   }
-// })
-
-// topRight.addEventListener('click', (event) => {
-//   if (on) {
-//     playerOrder.push(2);
-//     check();
-//     bottom_left_effects();
-//     setTimeout(() => {
-//       clearColor();
-//     }, 300);
-//   }
-// })
-
-// bottomLeft.addEventListener('click', (event) => {
-//   if (on) {
-//     playerOrder.push(3);
-//     check();
-//     top_right_effects();
-//     setTimeout(() => {
-//       clearColor();
-//     }, 300);
-//   }
-// })
-
-// bottomRight.addEventListener('click', (event) => {
-//   if (on) {
-//     playerOrder.push(4);
-//     check();
-//     bottom_right_effects();
-//     setTimeout(() => {
-//       clearColor();
-//     }, 300);
-//     }
-//   })
 
 function check() {
   if (playerOrder[playerOrder.length - 1] !== secuenceOrder[playerOrder.length - 1]){ 
@@ -169,7 +126,25 @@ function check() {
       scoreDisplay.innerHTML = turn; // Update score display
       play();
     }, 1000);
+    //Cuando pierdas:
     noise = false;
+    alert('Perdiste!');
+    startButton.innerHTML = "RESTART"
+    const puntajes = localStorage.getItem("puntaje");
+    let parsedPuntajes = JSON.parse(puntajes)
+    if (parsedPuntajes && parsedPuntajes.length > 0){
+      parsedPuntajes = [...parsedPuntajes]
+    }else{
+      parsedPuntajes = []
+    }
+    let nombreJugador = localStorage.getItem("nombre-jugador");
+    if (!nombreJugador){
+      nombreJugador= "Desconocido"
+    }
+    const finalPuntajes = [...parsedPuntajes, {name: nombreJugador,score: turn-1}]
+    localStorage.setItem("puntaje",JSON.stringify(finalPuntajes));
+    activateModal(finalPuntajes)  
+
     return;
   }
 
@@ -182,6 +157,8 @@ function check() {
     interval = setInterval(gameTurn, 800);
   }
 
+
+
 }
 
 function playerAction(color, effectFunction) {
@@ -193,55 +170,32 @@ function playerAction(color, effectFunction) {
   }
 }
 
+function activateModal(finalPuntajes){
+  var modal = document.getElementById("modalpopup");
+    modal.style.display = "block";
+
+    let tableHTML = `
+        <table>
+            <tr>
+                <th>NOMBRE</th>
+                <th>PUNTAJE</th>
+            </tr>
+            ${finalPuntajes.map(p => `<tr><td>${p.name}</td><td>${p.score}</td></tr>`).join("")}
+        </table>
+    `;
+
+    document.getElementById("scoresText").innerHTML = tableHTML;
+
+    document.querySelector(".close").addEventListener("click", function() {
+      document.getElementById("modalpopup").style.display = "none";
+  });
+}
 
 
+function goBack(){
 
+  isPlaying = false;
+  window.location.href = '../Inicio/inicio.html';
+}
 
-
-// function finishGame() {
-//     alert('Perdiste!');
-  
-//     if (intervalId !== null) {
-//       clearInterval(intervalId);
-//     }
-  
-//     isPlaying = false;
-  
-//     const previousPlayers = localStorage.getItem('scores');
-  
-//     let previousPlayersArray = [];
-  
-//     if (previousPlayers !== null) {
-//       previousPlayersArray = JSON.parse(previousPlayers);
-//     }
-  
-//     localStorage.setItem(
-//       'scores',
-//       JSON.stringify([
-//         ...previousPlayersArray,
-//         {
-//           name: playerName,
-//           count: hitCount,
-//         },
-//       ])
-//     );
-  
-//     alert(localStorage.getItem('scores'));
-//   }
-  
-//   function resetGame() {
-//     if (intervalId !== null) {
-//       clearInterval(intervalId);
-//     }
-  
-//     hitCount = 0;
-//     updateHitCount(0);   //FALTA!!!
-  
-//     const grid = document.querySelector('#grid');
-  
-//     grid.innerHTML = '';
-  
-//     prepareGame(); //FALTA!!!
-  
-//     isPlaying = false;
-//   }
+document.querySelector('#back').addEventListener('click', goBack);
