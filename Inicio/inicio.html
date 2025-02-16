@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+    <div class="contenedorMenu">
+        <div class="titleMenu">
+            <div>
+                <span style="color: red;">S</span>
+                <span style="color: blue;">I</span>
+                <span style="color: yellow;">M</span>
+                <span style="color: green;">O</span>
+                <span style="color: orange;">N</span>
+                <!-- <span>&nbsp;</span> -->
+            </div>
+            <div>
+                <span style="color: purple;">S</span>
+                <span style="color: rgb(34, 211, 211);">A</span>
+                <span style="color: fuchsia">Y</span>
+                <span style="color: lime;">S</span>
+            </div>
+        </div>
+        <form>
+            <label for="name">Ingrese su nombre:</label><br>
+            <input 
+            class="inputName" 
+            type="text" 
+            id="name-input" 
+            name="name"
+            placeholder="Nombre">
+            <br>
+        </form>
+        <div class="botonesInicio">
+            <button 
+            class="botonJuego" 
+            id ="play-button">JUGAR</button> 
+            <button id="myBtn">TOP PUNTAJES</button>
+            </button>
+        </div>
+    </div>
+    <!-- el modal popup-->
+    <div id="modalpopup" class="modal">
+    <div class="modalcont">
+        <span class="close">&times;</span>
+        <p id="scoresText"></p>    
+    </div>
+    <script>
+        var modal = document.getElementById("modalpopup");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+    </script>
+    <script src="inicio.js"></script>
+    </div>
+</body>
+</html>

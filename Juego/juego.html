@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="juego.css">
+    <audio id="sound1">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
+    </audio>
+    <audio id="sound2">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></source>
+    </audio>
+    <audio id="sound3">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></source>
+    </audio>
+    <audio id="sound4">
+        <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
+    </audio>
+
+</head>
+<body>
+    <div class="tituloPuntaje">
+        <button class="back" id="back">⬅</button>
+
+        <p class="puntuacion">Puntuacion:</p>
+        <p class="puntajeAcum" id = "puntaje-acum">-</p>
+    </div>
+    <div class="contenedorpapa">
+        <div class="contenedorJuego">
+            <div class="buttonsLeft">
+                <button class="button-top-left" id = "button-top-left"></button>
+                <button class="button-bottom-left" id = "button-bottom-left"></button>
+            </div>
+            <div class="buttonsRight">
+                <button class="button-top-right" id = "button-top-right"></button>
+                <button class="button-bottom-right" id = "button-bottom-right"></button>
+            </div>
+
+            
+        </div>
+        <button class="start" id="start">START</button>
+    </div>
+    <div id="modalpopup" class="modal">
+        <!-- Modal popup -->
+        <div class="modalcont">
+            <span class="close">&times;</span>
+            <p id="scoresText"></p>
+        </div>
+    </div>
+    <script src="juego.js"></script>
+</body>
+</html>
