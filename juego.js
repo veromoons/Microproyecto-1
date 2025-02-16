@@ -194,7 +194,7 @@ function activateModal(finalPuntajes){
 function goBack(){
 
   isPlaying = false;
-  window.location.href = '../../index.html';
+  window.location.href = 'index.html';
 }
 
 document.querySelector('#back').addEventListener('click', goBack);

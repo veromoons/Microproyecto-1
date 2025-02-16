@@ -19,7 +19,7 @@ function startGame(){
     isPlaying = true;
     localStorage.setItem("nombre-jugador", playerName);
     window.location.href = "juego.html";  
-    window.location.href = '../Juego/juego.html';
+    // window.location.href = '../Juego/juego.html';
 }
 
 document.querySelector('#play-button').addEventListener('click', startGame);
