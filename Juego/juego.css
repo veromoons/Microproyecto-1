@@ -31,7 +31,7 @@ body{
     color:white;
     margin:0;
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 20px;
     text-shadow: 1px 1px 3px white;
     font-family: 'Helvetica';
     font-weight: bold;
@@ -58,8 +58,8 @@ body{
     cursor: pointer;
     transition: box-shadow 0.1s ease-in-out;
     margin: 5px;
-    width:180px;
-    height:180px;
+    width:120px;
+    height:120px;
     border-top-left-radius: 150px;
     background-color: blue;
     border:none;
@@ -73,8 +73,8 @@ body{
     cursor: pointer;
     transition: box-shadow 0.1s ease-in-out;
     margin: 5px;
-    width:180px;
-    height:180px;
+    width:120px;
+    height:120px;
     border-top-right-radius: 150px;
     background-color: red;
     border:none;
@@ -88,8 +88,8 @@ body{
     cursor: pointer;
     transition: box-shadow 0.1s ease-in-out;
     margin: 5px;
-    width:180px;
-    height:180px;
+    width:120px;
+    height:120px;
     border-bottom-left-radius: 150px;
     background-color: yellow;
     border:none;
@@ -103,8 +103,8 @@ body{
     cursor: pointer;
     transition: box-shadow 0.1s ease-in-out;
     margin: 5px;
-    width:180px;
-    height:180px;
+    width:120px;
+    height:120px;
     border-bottom-right-radius: 150px;
     background-color: green;
     border:none;
@@ -167,9 +167,8 @@ body{
 
   .back {
     position: absolute;
-    left: 40px;
-    top: 40px;
-
+    left: 20px;
+    top: 20px;
     color:white;
     background-color: black;
     border-width: 10px;
@@ -177,7 +176,7 @@ body{
     width: auto;
     border-radius: 10px;
     font-weight: bolder;
-    font-size: 40px;
+    font-size: 20px;
   }
 
   table {
@@ -199,4 +198,100 @@ th {
 
 td {
     background-color: rgba(255, 255, 255, 0.1); 
+}
+
+@media screen and (min-width: 768px) {
+    .puntuacion{
+        color:white;
+        margin:0;
+        margin-top: 20px;
+        font-size: 30px;
+        text-shadow: 1px 1px 3px white;
+        font-family: 'Helvetica';
+        font-weight: bold;
+    }
+    
+    .puntajeAcum{
+        color:white;
+        margin:0;
+        margin-bottom: 50px;
+        font-size: 30px;
+        text-shadow: 1px 1px 3px white;
+        font-family: 'Helvetica';
+        font-weight: bold;
+    }
+
+    .back {
+        position: absolute;
+        left: 40px;
+        top: 40px;
+    
+        color:white;
+        background-color: black;
+        border-width: 10px;
+        border-color: white;
+        width: auto;
+        border-radius: 10px;
+        font-weight: bolder;
+        font-size: 40px;
+      }
+      .button-top-left{
+        border: none;
+        cursor: pointer;
+        transition: box-shadow 0.1s ease-in-out;
+        margin: 5px;
+        width:180px;
+        height:180px;
+        border-top-left-radius: 150px;
+        background-color: blue;
+        border:none;
+    }
+    .button-top-left:active {
+        box-shadow: 0 0 40px rgb(60, 0, 255), 0 0 80px rgba(0, 38, 255, 0.7);
+    }
+    
+    .button-top-right{
+        border: none;
+        cursor: pointer;
+        transition: box-shadow 0.1s ease-in-out;
+        margin: 5px;
+        width:180px;
+        height:180px;
+        border-top-right-radius: 150px;
+        background-color: red;
+        border:none;
+    }
+    .button-top-right:active {
+        box-shadow: 0 0 40px rgb(158, 3, 3), 0 0 80px rgb(158, 3, 3);
+    }
+    
+    .button-bottom-left{
+        border: none;
+        cursor: pointer;
+        transition: box-shadow 0.1s ease-in-out;
+        margin: 5px;
+        width:180px;
+        height:180px;
+        border-bottom-left-radius: 150px;
+        background-color: yellow;
+        border:none;
+    }
+    .button-bottom-left:active {
+        box-shadow: 0 0 40px rgb(255, 234, 0), 0 0 80px rgba(238, 255, 0, 0.7);
+    }
+    
+    .button-bottom-right{
+        border: none;
+        cursor: pointer;
+        transition: box-shadow 0.1s ease-in-out;
+        margin: 5px;
+        width:180px;
+        height:180px;
+        border-bottom-right-radius: 150px;
+        background-color: green;
+        border:none;
+    }
+    .button-bottom-right:active {
+        box-shadow: 0 0 40px rgb(15, 110, 15), 0 0 80px rgb(15, 110, 15);
+    }
 }
