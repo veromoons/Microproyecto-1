@@ -23,14 +23,11 @@ startButton.addEventListener('click', (event) => {
 
 function play() {
   flash = 0;
-  // interval = 0;
   turn=1;
   scoreDisplay.innerHTML = 0;
-  // document.querySelector("#puntaje-acum").innerHTML = 1;
   good = true
   secuenceOrder = [];
   playerOrder = [];
-  // startButton.innerHTML = "START";
   for (let i = 0; i < 100; i++) {
     let random_color = Math.floor(Math.random() * 4) + 1
     secuenceOrder.push(random_color);
@@ -197,7 +194,7 @@ function activateModal(finalPuntajes){
 function goBack(){
 
   isPlaying = false;
-  window.location.href = '../Inicio/inicio.html';
+  window.location.href = '../../index.html';
 }
 
 document.querySelector('#back').addEventListener('click', goBack);

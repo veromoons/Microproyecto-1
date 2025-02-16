@@ -15,7 +15,6 @@ function startGame(){
         return
     }
     playerName = name;
-    console.log(playerName);
 
     isPlaying = true;
     localStorage.setItem("nombre-jugador", playerName);
